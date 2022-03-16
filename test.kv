@@ -1,0 +1,72 @@
+<Button>
+    font_size: '16sp'
+<Label>
+    font_size: '16sp'
+<TextInput>
+    multiline: False
+    font_size: '18sp'
+    size: 1, 0.5
+
+<MyLayout>:
+    FloatLayout:
+        rows: 2
+        size: root.width, root.height
+
+        BoxLayout:
+            pos_hint: {'x': 0, 'top': 1}
+            size_hint: 1, 0.2
+            Image:
+                size: root.width, root.height
+                source: 'data/logo.png'
+                size: root.width, root.height
+        GridLayout:
+            pos_hint: {'x': 0, 'top': 0.8}
+            size_hint: 1, 0.8
+            cols: 3
+            padding: 15
+            spacing: 15
+            Button:
+                text: "Съесть!"
+                on_press: app.record()
+            TextInput:
+                id: sqlite_inp
+            Label:
+                id: record_confirm
+
+            Button:
+                text: "Какать!"
+                on_press: app.show()
+            Label:
+#                text: root.now
+            Label:
+                id: sqlite_show
+            Button:
+                text: "Спать!"
+                on_release: app.stop()
+            Image:
+                source: 'data/login_1.png'
+            Label:
+                text: 'Морда'
+            Button:
+                text: "Не нажимать!"
+            Label:
+                text: root.current_base
+            Label:
+                text: "Сегодня:"
+            Button:
+                text: "Время"
+            Label:
+                id: time_label
+                text: root.display_time
+            Label:
+                id: date_label
+                text: root.now.strftime('%Y %B %d')
+            Button:
+                text: "Ничего"
+            Label:
+                text: "не"
+            Button:
+                text: "делать"
+
+
+
